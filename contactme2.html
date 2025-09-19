@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Contact Form</title>
+  <link rel="stylesheet" href="Navigation.css">
+    <style>
+    P{
+        color:white;
+    }
+    body {
+        background-color: #000;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        height: 100vh; /* full viewport height */
+        margin: 0;
+    }
+
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        width: 350px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #333;
+    }
+
+    .form-container p {
+        text-align: left;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #218838;
+    }
+
+
+
+    
+</style>
+
+
+
+<nav>
+<ul class="navbar">
+        <li><a href="Portfolio03.html" class = "Tabs">Home</a></li>
+        <li><a href="Projects.html"class = "Tabs">Projects</a></li>
+        <li ><a href="Contact me  .html"class = "Tabs">Contact</a></li>
+       
+    </ul>
+
+
+</nav>
+
+<script>
+function validateForm()
+{
+    var username = document.forms["Form1"]["username"].value;
+    if (username == null || username == "")
+    {
+        alert("Username must not be blank!");
+        return false;
+    }
+
+    var password1 = document.forms["Form1"]["password1"].value;
+    var password2 = document.forms["Form1"]["password2"].value;
+    if (password1 != password2)
+    {
+        alert("Passwords must match!");
+        return false;
+    }
+
+    var email = document.forms["Form1"]["email"].value;
+    var foundat = false;
+    for (var i = 0; i < email.length; i++)
+    {
+        if (email[i] == '@')
+        {
+            foundat = true;
+        }
+    }
+    if (foundat == false)
+    {
+        alert("Please enter a valid email");
+        return false;
+    }
+
+    return true; 
+}
+</script>
+</head>
+<body bgcolor="#99FF99">
+
+
+<form name="Form1" action="" onsubmit="return validateForm()" method="post">
+    <p class = "Username"><b>Username:</b> <input type="text" name="username" value=""></p>
+    <p class = "Email"><b>Email:</b> <input type="text" name="email" value=""></p>
+    <p class = "Password"><b>Password:</b> <input type="password" name="password1" value=""></p>
+    <p class = "Repeat Password"><b>Repeat Password:</b> <input type="password" name="password2" value=""></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+</body>
+</html>
