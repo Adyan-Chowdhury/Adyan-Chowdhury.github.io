@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DICE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    h1 {
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+    }
+    
+    input {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        border: 3px solid #333;
+        border-radius: 10px;
+        margin: 0 10px;
+        background-color: white;
+    }
+    
+    button {
+        background-color: #ff6b6b;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #ff5252;
+    }
+    
+    label {
+        font-size: 1.2em;
+        color: #555;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h1>Roll Dice</h1>
+    
+    <label>Dice Roll:</label><input type="text" id="dice1" value="1">
+    <button onclick="rollDice()">Try it</button>
+    
+    <script>
+        function rollDice()
+        {
+            var dice1 = Math.floor((Math.random() * 6) + 1);
+            document.getElementById("dice1").value = dice1;
+        }
+    </script>
+</body>
+</html>
